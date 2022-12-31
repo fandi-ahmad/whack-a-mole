@@ -1,0 +1,45 @@
+.ground{
+    width: 200px;
+    height: 50px;
+    background: url(../img/ground.png) bottom no-repeat;
+    background-size: cover;
+    background-size: 200px;
+    background-position-y: -10px;
+    position: absolute;
+    display: block;
+    z-index: 2;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.mouse{
+    background: url(../img/mouse.png);
+    width: 200px;
+    height: 150px;
+    background-size: 200px;
+    background-size: 110px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: relative;
+    z-index: 1;
+    transition: all .2s ease;
+    margin-top: 200px;
+}
+
+.block{
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.mouse-show{
+    transition: all .2s ease !important;
+    margin-top: 0px !important;
+}
+.board{
+    cursor: url('../img/hammer-up.png'), auto;
+    width: 600px;
+}
+.board:active{
+    cursor: url('../img/hammer-down.png'), auto;
+}
