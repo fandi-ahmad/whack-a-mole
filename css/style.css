@@ -1,3 +1,11 @@
+body{
+    background: url(../img/background.png);
+    background-size: cover;
+}
+@font-face{
+    font-family: "wyh";
+    src: url(../font/WashYourHand.otf);
+}
 .ground{
     width: 200px;
     height: 50px;
@@ -42,4 +50,38 @@
 }
 .board:active{
     cursor: url('../img/hammer-down.png'), auto;
+}
+.white-card{
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90vh;
+    z-index: 3;
+    border-radius: 20px;
+    width: 90%;
+}
+
+.font-style{
+    font-family: wyh;
+    font-size: 60px;
+    text-align: center;
+    line-height: 40px;
+}
+.btn-brown{
+    background-color: #623821;
+    color: #ffffff;
+}
+.btn-brown:hover{
+    background-color: #814f35;
+    color: #ffffff;
+}
+.link{
+    color: #623821;
+    font-weight: 500;
+    text-decoration: none;
+}
+.link:hover{
+    text-decoration: underline;
 }
