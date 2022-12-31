@@ -8,11 +8,13 @@ m2 = document.getElementById('m2'),
 m3 = document.getElementById('m3'),
 m4 = document.getElementById('m4'),
 m5 = document.getElementById('m5'),
-m6 = document.getElementById('m6');
+m6 = document.getElementById('m6'),
+time = document.getElementById('time');
 
 let groundBefore;
 let endGame;
 let score;
+let duration;
 
 function randomGround(ground) {
     let g= Math.floor(Math.random() * ground.length);
@@ -45,10 +47,13 @@ function startGame() {
     endGame = false
     score = 0
     scoreBoard.innerText = 0
+    duration = 10
+    time.innerText = duration
+    countDown()
     mouseShow()
     setTimeout(() => {
         endGame = true
-    }, 20000);
+    }, 10000);
 }
 
 function punch() {
@@ -67,3 +72,14 @@ mouse.forEach(m => {
     m.addEventListener('click', punch)
 });
 
+function countDown() {
+    duration--
+    const td = setInterval(() => {
+        time.innerText = duration
+        duration--
+    }, 1000);
+    
+    setTimeout(() => {
+        clearInterval(td)
+    }, 10000);
+}
