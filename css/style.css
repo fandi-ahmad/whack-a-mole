@@ -1,6 +1,7 @@
 body{
     background: url(../img/background.png);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 @font-face{
     font-family: "wyh";
@@ -105,4 +106,10 @@ body{
     font-size: 300px;
     color: white;
     transition: all 0.1s ease;
+}
+
+@media (max-width: 622px) {
+    body{
+        background-size: 700px;
+    }
 }
