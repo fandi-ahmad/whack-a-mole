@@ -23,7 +23,8 @@ let groundBefore;
 let endGame;
 let score;
 let duration;
-let preDuration
+let preDuration;
+let gameTime = 15
 
 function randomGround(ground) {
     let g= Math.floor(Math.random() * ground.length);
@@ -55,7 +56,7 @@ function mouseShow() {
 function startGame() {
     endGame = false
     score = 0
-    duration = 10
+    duration = gameTime
     preDuration = 3
     scoreBoard.innerText = 0
     
@@ -72,7 +73,7 @@ function startGame() {
     
         setTimeout(() => {
             endGame = true
-        }, 10000);
+        }, gameTime + '000');
     }, 3000);
     
 }
@@ -110,7 +111,7 @@ function countDown() {
 
         scoreBoard2.innerText = score
         playBtn.innerText = 'Try Again'
-    }, 10000);
+    }, gameTime + '000');
 }
 
 function preTimer() {
