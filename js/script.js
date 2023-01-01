@@ -15,12 +15,15 @@ whiteBoard = document.getElementById('whiteBoard'),
 playBtn = document.getElementById('playBtn'),
 textHead = document.getElementById('textHead'),
 img = document.getElementById('img'),
-scoreEnd = document.getElementById('scoreEnd')
+scoreEnd = document.getElementById('scoreEnd'),
+preTime = document.getElementById('preTime'),
+preTimeBoard = document.getElementById('preTimeBoard')
 
 let groundBefore;
 let endGame;
 let score;
 let duration;
+let preDuration
 
 function randomGround(ground) {
     let g= Math.floor(Math.random() * ground.length);
@@ -52,17 +55,26 @@ function mouseShow() {
 function startGame() {
     endGame = false
     score = 0
-    scoreBoard.innerText = 0
     duration = 10
-    time.innerText = duration
-    countDown()
-    mouseShow()
-
+    preDuration = 3
+    scoreBoard.innerText = 0
+    
     whiteBoard.classList.add('d-none')
+    preTimeBoard.classList.remove('d-none')
+    
+    time.innerText = duration
+    preTime.innerText = preDuration
+    preTimer()
 
     setTimeout(() => {
-        endGame = true
-    }, 10000);
+        countDown()
+        mouseShow()
+    
+        setTimeout(() => {
+            endGame = true
+        }, 10000);
+    }, 3000);
+    
 }
 
 function punch() {
@@ -92,6 +104,7 @@ function countDown() {
         clearInterval(td)
         whiteBoard.classList.remove('d-none')
 
+        textHead.classList.add('d-none')
         img.classList.add('d-none')
         scoreEnd.classList.remove('d-none')
 
@@ -99,3 +112,19 @@ function countDown() {
         playBtn.innerText = 'Try Again'
     }, 10000);
 }
+
+function preTimer() {
+    const pt = setInterval(() => {
+        preDuration--
+        preTime.innerText = preDuration
+    }, 1000);
+
+    setTimeout(() => {
+        clearInterval(pt)
+        preTimeBoard.classList.add('d-none')
+    }, 3000);
+}
+
+window.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false);

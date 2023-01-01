@@ -15,9 +15,9 @@
         <div>
             <h1 style="font-size: 80px; font-family: wyh;" id="textHead">Whack a Mole</h1>
             <img src="img/logo.png" alt="" class="mb-4" id="img">
-            <h2 id="scoreEnd" class="d-none">
-                <span>your score: </span>
-                <span id="scoreBoard2"></span>
+            <h2 id="scoreEnd" class="d-none" style="font-family: wyh;">
+                <span style="font-size: 50px;">your score: </span> <br>
+                <span id="scoreBoard2" style="font-size: 170px;"></span>
             </h2>
             <br>
             <button onclick="startGame()" class="btn btn-brown px-3" id="playBtn">Start</button>
@@ -25,6 +25,10 @@
                 Created by <a href="https://github.com/fandi-ahmad" class="link">Fandi Ahmad</a>
             </p>
         </div>
+    </div>
+
+    <div id="preTimeBoard" class="d-none in-center d-flex justify-content-center align-items-center">
+        <div id="preTime">3</div>
     </div>
 
     <br>
@@ -35,7 +39,7 @@
             <div class="d-flex flex-column justify-content-center">
                 <h5 class="text-center">Time Remaining:</h5>
                 <span id="time" class="font-style">
-
+                    10
                 </span>
             </div>
 
