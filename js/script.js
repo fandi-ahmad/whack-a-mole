@@ -114,14 +114,24 @@ function countDown() {
 }
 
 function preTimer() {
+    setTimeout(() => {
+        preTime.style.fontSize = '200px'
+    }, 50);
     const pt = setInterval(() => {
         preDuration--
         preTime.innerText = preDuration
+        preTime.style.fontSize = '300px'
+        setTimeout(() => {
+            preTime.style.fontSize = '200px'
+        }, 50);
     }, 1000);
 
     setTimeout(() => {
         clearInterval(pt)
         preTimeBoard.classList.add('d-none')
+        setTimeout(() => {
+            preTime.style.fontSize = '300px'
+        }, 50);
     }, 3000);
 }
 

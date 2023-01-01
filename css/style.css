@@ -102,6 +102,7 @@ body{
 }
 #preTime{
     font-family: wyh;
-    font-size: 200px;
+    font-size: 300px;
     color: white;
+    transition: all 0.1s ease;
 }
