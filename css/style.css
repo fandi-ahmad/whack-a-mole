@@ -1,7 +1,9 @@
 body{
-    background: url(../img/background.png);
+    background: url(../img/view.webp);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
 }
 @font-face{
     font-family: "wyh";
@@ -25,7 +27,7 @@ body{
 }
 
 .mouse{
-    background: url(../img/mouse.png);
+    background: url(../img/mouse.webp);
     width: 200px;
     height: 150px;
     background-size: 200px;
@@ -55,17 +57,25 @@ body{
 .board:active{
     cursor: url('../img/hammer-down.png'), auto;
 }
-.white-card{
-    background-color: #ffffff;
+.thumbnail {
+    background-image: url(../img/thumbnail-dark.webp);
+    background-position: bottom;
+    background-size: cover;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 90vh;
+    height: 100vh;
+    width: 100%;
     z-index: 4;
-    border-radius: 20px;
-    width: 90%;
 }
+
+.text-head {
+    font-size: 80px; 
+    font-family: wyh; 
+    text-shadow: 0 0 0.5em black;
+}
+
 
 .font-style{
     font-family: wyh;
@@ -81,9 +91,8 @@ body{
     background-color: #814f35;
     color: #ffffff;
 }
-.link{
-    color: var(--clr-brown);
-    font-weight: 500;
+
+.link {
     text-decoration: none;
 }
 .link:hover{
@@ -108,8 +117,9 @@ body{
     transition: all 0.1s ease;
 }
 
-@media (max-width: 622px) {
+/* @media (max-width: 622px) {
     body{
         background-size: 700px;
     }
-}
+} */
+

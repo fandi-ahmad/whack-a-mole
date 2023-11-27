@@ -1,23 +1,25 @@
+const getId = id => document.getElementById(id)
+
 const
 ground = document.querySelectorAll('.ground'),
 mouse = document.querySelectorAll('.mouse'),
-scoreBoard = document.getElementById('scoreBoard'),
-scoreBoard2 = document.getElementById('scoreBoard2'),
-board = document.getElementById('board'),
-m1 = document.getElementById('m1'),
-m2 = document.getElementById('m2'),
-m3 = document.getElementById('m3'),
-m4 = document.getElementById('m4'),
-m5 = document.getElementById('m5'),
-m6 = document.getElementById('m6'),
-time = document.getElementById('time'),
-whiteBoard = document.getElementById('whiteBoard'),
-playBtn = document.getElementById('playBtn'),
-textHead = document.getElementById('textHead'),
-img = document.getElementById('img'),
-scoreEnd = document.getElementById('scoreEnd'),
-preTime = document.getElementById('preTime'),
-preTimeBoard = document.getElementById('preTimeBoard')
+scoreBoard = getId('scoreBoard'),
+scoreBoard2 = getId('scoreBoard2'),
+board = getId('board'),
+m1 = getId('m1'),
+m2 = getId('m2'),
+m3 = getId('m3'),
+m4 = getId('m4'),
+m5 = getId('m5'),
+m6 = getId('m6'),
+time = getId('time'),
+whiteBoard = getId('whiteBoard'),
+playBtn = getId('playBtn'),
+textHead = getId('textHead'),
+// img = getId('img'),
+scoreEnd = getId('scoreEnd'),
+preTime = getId('preTime'),
+preTimeBoard = getId('preTimeBoard')
 
 let groundBefore;
 let endGame;
@@ -60,6 +62,7 @@ function startGame() {
     preDuration = 3
     scoreBoard.innerText = 0
     
+    getId('createdText').classList.add('d-none')
     whiteBoard.classList.add('d-none')
     preTimeBoard.classList.remove('d-none')
     
@@ -77,6 +80,7 @@ function startGame() {
     }, 3000);
     
 }
+
 
 function punch() {
     score++
@@ -106,7 +110,7 @@ function countDown() {
         whiteBoard.classList.remove('d-none')
 
         textHead.classList.add('d-none')
-        img.classList.add('d-none')
+        // img.classList.add('d-none')
         scoreEnd.classList.remove('d-none')
 
         scoreBoard2.innerText = score
@@ -136,6 +140,7 @@ function preTimer() {
     }, 3000);
 }
 
-window.addEventListener("contextmenu", function(e){
-    e.preventDefault();
-}, false);
+// tidak bisa klik kanan
+// window.addEventListener("contextmenu", function(e){
+//     e.preventDefault();
+// }, false);
