@@ -16,7 +16,6 @@ time = getId('time'),
 whiteBoard = getId('whiteBoard'),
 playBtn = getId('playBtn'),
 textHead = getId('textHead'),
-// img = getId('img'),
 scoreEnd = getId('scoreEnd'),
 preTime = getId('preTime'),
 preTimeBoard = getId('preTimeBoard')
@@ -110,7 +109,6 @@ function countDown() {
         whiteBoard.classList.remove('d-none')
 
         textHead.classList.add('d-none')
-        // img.classList.add('d-none')
         scoreEnd.classList.remove('d-none')
 
         scoreBoard2.innerText = score
@@ -140,7 +138,6 @@ function preTimer() {
     }, 3000);
 }
 
-// tidak bisa klik kanan
-// window.addEventListener("contextmenu", function(e){
-//     e.preventDefault();
-// }, false);
+window.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false);
